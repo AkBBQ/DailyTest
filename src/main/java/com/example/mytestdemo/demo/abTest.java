@@ -21,6 +21,7 @@ public class abTest {
         String m=s.substring(0,6);
 
 
+
         //b.setMessage("aa");
         System.out.println(m.equals(demo));
     }
