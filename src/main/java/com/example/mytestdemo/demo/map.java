@@ -35,5 +35,13 @@ public class map {
         System.out.println(list1);
         System.out.println(list2);
 
+        //重复放相同的key会覆盖前面的
+        Map<Integer,String> map =new HashMap<>();
+        map.put(1,"1");
+        map.put(1,"2");
+        map.put(1,"3");
+        map.put(2,"3");
+        System.out.println(map.size());
+
     }
 }
