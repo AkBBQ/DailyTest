@@ -36,6 +36,11 @@ public class Lambad {
                 .age(24)
                 .build());
 
+        //对象可以set空值
+        User user =User.builder().build();
+        user.setAge(null);
+        System.out.println(user);
+
         //一条用户ID对应一条记录
         Map<Integer, User> collect = users.stream().collect(Collectors.toMap(User::getId, Function.identity()));
         //用户Id的集合
