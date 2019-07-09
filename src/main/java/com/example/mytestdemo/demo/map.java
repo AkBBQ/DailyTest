@@ -1,9 +1,6 @@
 package com.example.mytestdemo.demo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * All rights Reserved, Designed By www.maihaoche.com
@@ -42,6 +39,8 @@ public class map {
         map.put(1,"3");
         map.put(2,"3");
         System.out.println(map.size());
+
+
 
     }
 }
