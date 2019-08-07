@@ -15,6 +15,7 @@ public class demo {
     public static void main(String[] args) {
         BigDecimal a =  new BigDecimal("0");
         BigDecimal b =  new BigDecimal("1");
+        //加
         BigDecimal c =a.add(b);
         System.out.println(c);
     }

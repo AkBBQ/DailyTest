@@ -14,5 +14,6 @@ public class demo {
         int a = 200;
         Integer b = new Integer(200);
         System.out.println(b.equals(a));
+        System.out.println(a == b);
     }
 }

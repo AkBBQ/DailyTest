@@ -25,7 +25,7 @@ public class demo {
         a.add(User.builder().age(5).name("e").build());
         a.add(User.builder().age(6).name("f").build());
 
-        //连续使用二个map也是没问题的
+        //连续使用二个.map也是没问题的
         List<String> collect = a.stream().map(User::getAge).map(String::valueOf).collect(Collectors.toList());
         System.out.println(collect.toString());
 

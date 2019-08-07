@@ -3,7 +3,7 @@ package com.example.mytestdemo.demo;
 /**
  * All rights Reserved, Designed By www.maihaoche.com
  *
- * @Package com.example.mytestdemo.demo
+ * @Package com.example.mytestdemo.Demo
  * @author: angtai（angtai@maihaoche.com）
  * @date: 2019/1/22 8:09 PM
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
@@ -26,7 +26,7 @@ public class abTest {
        // System.out.println("一共有几页:"+(total/pagesize+"'页'，最后一页"+total%pagesize+"条数据"));
 
         //b.setMessage("aa");
-        //System.out.println(m.equals(demo));
+        //System.out.println(m.equals(Demo));
 
         Integer aa =1;
         String bb ="";
