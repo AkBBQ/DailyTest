@@ -5,29 +5,24 @@ import java.util.*;
 
 
 /**
- * All rights Reserved, Designed By www.maihaoche.com
- *
- * @Package com.example.mytestdemo.File
- * @author: angtai（angtai@maihaoche.com）
- * @date: 2019/7/17 10:53 AM
- * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
+ * 将内容写到文件中
  */
 
 public class demo2 {
 
 
     public static void main(String[] args) {
+        //新建一个文件
         File file = getFile();
+        //要写入的内容
         List<?> list = Arrays.asList(1,2,3,4,5);
 
         try {
-
-            byte b[] = new byte[1024];
+            //将内容转成byte数组
+            byte b[];
             b = list.toString().getBytes();
-
-            //写入文件
+            //输出流到文件中
             FileOutputStream in = new FileOutputStream(file);
-
             try {
                 //写入文件 字节数组，起始位置，长度
                 in.write(b,0,b.length);

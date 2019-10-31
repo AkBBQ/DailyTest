@@ -8,12 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * All rights Reserved, Designed By www.maihaoche.com
- *
- * @Package http
- * @author: angtai（angtai@maihaoche.com）
- * @date: 2019/10/15 9:49 AM
- * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
+ * 后台发送短信http请求
  */
 
 public class demo {

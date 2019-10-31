@@ -1,4 +1,4 @@
-package Scanner;
+package com.example.mytestdemo.Scanner;
 
 import com.example.mytestdemo.Model.User;
 
@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * All rights Reserved, Designed By www.maihaoche.com
  *
- * @Package Scanner
+ * @Package com.example.mytestdemo.Scanner
  * @author: angtai（angtai@maihaoche.com）
  * @date: 2019/7/27 10:17 AM
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
@@ -17,7 +17,7 @@ import java.util.*;
 
 public class demo {
     public static void main(String[] args) {
-//        Scanner scan = new Scanner(System.in);	//构造Scanner类的对象scan，接收从控制台输入的信息
+//        com.example.mytestdemo.Scanner scan = new com.example.mytestdemo.Scanner(System.in);	//构造Scanner类的对象scan，接收从控制台输入的信息
 //        System.out.println("请输入学生的姓名,以逗号隔开");
 //        String name = scan.nextLine();//接收一个字符串，可以加除Enter以外的所有符号，包括空格和Tab
 //        System.out.println(name);

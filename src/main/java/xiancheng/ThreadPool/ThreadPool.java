@@ -14,6 +14,7 @@ public class ThreadPool {
 
 
             ThreadDemo threadDemo = new ThreadDemo();
+            //下面用法不合理 一般线程池配合for循环使用
             Thread thread1 = new Thread(threadDemo,"线程1");
             Thread thread2 = new Thread(threadDemo,"线程2");
             executorService.submit(thread1);
