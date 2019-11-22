@@ -1,11 +1,11 @@
-package parse;
+package com.example.mytestdemo.parse;
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * All rights Reserved, Designed By www.maihaoche.com
  *
- * @Package parse
+ * @Package com.example.mytestdemo.parse
  * @author: angtai（angtai@maihaoche.com）
  * @date: 2019/7/24 7:14 PM
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
