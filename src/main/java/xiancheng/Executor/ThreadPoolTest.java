@@ -17,9 +17,9 @@ import java.util.concurrent.*;
 public class ThreadPoolTest {
     public static void main(String[] args) {
 //        SingleThreadPool();
-//        newFixedThreadPool();
+        newFixedThreadPool();
 //        newScheduledThreadPool();
-        newCachedThreadPool();
+//        newCachedThreadPool();
     }
 
 
@@ -53,7 +53,7 @@ public class ThreadPoolTest {
     private static void newFixedThreadPool() {
 
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 50; i++) {
             try {
                 Thread.sleep(2000L);
             } catch (InterruptedException e) {
@@ -100,6 +100,7 @@ public class ThreadPoolTest {
 
             executorService.execute(()-> System.out.println("当前线程:"+Thread.currentThread().getName()+"开始干活"));
 
+            //todo 拒绝策略？
         }
     }
 }
