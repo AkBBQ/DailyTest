@@ -17,9 +17,10 @@ import java.util.concurrent.*;
 public class ThreadPoolTest {
     public static void main(String[] args) {
 //        SingleThreadPool();
-        newFixedThreadPool();
+//        newFixedThreadPool();
 //        newScheduledThreadPool();
 //        newCachedThreadPool();
+        userDefinethread();
     }
 
 
@@ -101,6 +102,28 @@ public class ThreadPoolTest {
             executorService.execute(()-> System.out.println("当前线程:"+Thread.currentThread().getName()+"开始干活"));
 
             //todo 拒绝策略？
+        }
+    }
+
+
+    /**
+     * 自定义线程池
+     *
+     */
+    private static void userDefinethread(){
+        int i = 10;
+
+        ThreadPoolExecutor myPool = new ThreadPoolExecutor(2,
+                5,
+                10000L,
+                TimeUnit.MINUTES,
+                new LinkedBlockingQueue<>(1024),
+                new ThreadPoolExecutor.AbortPolicy());
+
+
+        while (i>0){
+            myPool.execute(()-> System.out.println("线程"+Thread.currentThread().getName()+"执行任务"));
+            i--;
         }
     }
 }
