@@ -1,14 +1,7 @@
 package 代理模式.静态代理;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 /**
- * All rights Reserved, Designed By www.maihaoche.com
- *
- * @Package 代理模式.静态代理
- * @author: angtai（angtai@maihaoche.com）
- * @date: 2019/11/22 5:43 PM
- * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
+ * 代理类
  */
 
 public class Proxy implements Sell {
