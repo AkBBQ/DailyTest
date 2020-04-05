@@ -1,6 +1,4 @@
-package 代理模式.动态代理;
-
-import 代理模式.静态代理.Sell;
+package DesignModel.代理模式.静态代理;
 
 /**
  * 被代理类

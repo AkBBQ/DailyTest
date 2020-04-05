@@ -1,4 +1,4 @@
-package 代理模式.静态代理;
+package DesignModel.代理模式.静态代理;
 
 /**
  * 代理类
