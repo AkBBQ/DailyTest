@@ -22,7 +22,7 @@ public class ReentrantLockDemo {
     }
 
     public static class ThreadDemo2 extends Thread {
-        //公布锁
+        //公平锁
         Lock localLock = new ReentrantLock(true);
         private int i = 0;
 
