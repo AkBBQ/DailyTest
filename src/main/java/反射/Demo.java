@@ -1,5 +1,7 @@
 package 反射;
 
+import com.example.mytestdemo.Model.Student;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -13,8 +15,12 @@ public class Demo {
 
             Constructor constructor = aClass.getConstructor();
 
-            Object student = constructor.newInstance();
+            Object studentObject = constructor.newInstance();
 
+            Student student = (Student) studentObject;
+            student.setId(1);
+            student.setName("hzr");
+            student.setAge(23);
             System.out.println(student.toString());
 
         } catch (ClassNotFoundException | NoSuchMethodException e) {
