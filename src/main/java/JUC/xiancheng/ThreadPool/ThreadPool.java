@@ -1,10 +1,10 @@
-package xiancheng.ThreadPool;
+package JUC.xiancheng.ThreadPool;
 
 import java.util.concurrent.*;
 
 /**
  * 线程池管理多线程
- * xiancheng.ThreadSafe.ThreadSafe 比普通线程的好处是好管理线程
+ * JUC.xiancheng.SynchronizedDemo.SynchronizedDemo 比普通线程的好处是好管理线程
  */
 
 public class ThreadPool {

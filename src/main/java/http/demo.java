@@ -2,6 +2,7 @@ package http;
 
 
 import com.alibaba.fastjson.JSONObject;
+import org.apache.http.client.HttpClient;
 
 import java.io.*;
 import java.net.HttpURLConnection;

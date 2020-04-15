@@ -1,11 +1,11 @@
-package xiancheng.ThreadSafe;
+package JUC.xiancheng.ThreadSafe;
 
 /**
  * 线程安全 多窗口抢火车票
  */
 
 
-public class ThreadSafe {
+public class SynchronizedDemo {
     private static Object object = new Object();
 
     public static void main(String[] args) throws InterruptedException {
@@ -53,7 +53,6 @@ public class ThreadSafe {
                     System.out.println(Thread.currentThread().getName() + "出售第" + (10 - count + 1) + "张火车票");
                     count--;
                 }
-
             }
         }
     }

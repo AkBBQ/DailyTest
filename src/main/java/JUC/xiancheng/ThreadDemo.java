@@ -1,4 +1,4 @@
-package xiancheng;
+package JUC.xiancheng;
 
 /**
  * 线程使用方式一 继承Thread类
