@@ -118,6 +118,7 @@ public class ThreadPoolTest {
                 10000L,
                 TimeUnit.MINUTES,
                 new LinkedBlockingQueue<>(1024),
+                Executors.defaultThreadFactory(),
                 new ThreadPoolExecutor.AbortPolicy());
 
 
