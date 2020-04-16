@@ -55,5 +55,16 @@ public class SynchronizedDemo {
                 }
             }
         }
+
+
+        //synchronized实现三:作用域为对象
+        public void sell3() {
+            synchronized (SynchronizedDemo.class) {
+                if (count > 0) {
+                    System.out.println(Thread.currentThread().getName() + "出售第" + (10 - count + 1) + "张火车票");
+                    count--;
+                }
+            }
+        }
     }
 }
