@@ -26,11 +26,11 @@ public class SynchronizedDemo {
         public void run() {
             while (count > 0) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                sell();
+                sell2();
             }
         }
 

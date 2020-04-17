@@ -2,6 +2,9 @@ package JUC.xiancheng.ThreadSafe;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Timer;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -40,6 +43,7 @@ public class SellTicketsDemo {
                 Thread.sleep(10000);
                 if (i > 0) {
                     System.out.println(Thread.currentThread().getName() + "正在卖第:" + (100 - getI() + 1) + "张票");
+                    System.out.println(LocalDateTime.now());
                     i--;
                 }
             } catch (Exception e) {
