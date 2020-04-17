@@ -1,14 +1,9 @@
 package JUC.xiancheng.ThreadSafe;
 
+
 import lombok.Data;
 
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Timer;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.RejectedExecutionHandler;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -19,9 +14,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SellTicketsDemo {
     public static void main(String[] args) {
         //1、使用自定义线程池
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5,
-                2, TimeUnit.SECONDS,
-                new ArrayBlockingQueue(10),new ThreadPoolExecutor.DiscardOldestPolicy());
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5, 2, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
+
         Sell sell = new Sell();
         while (sell.getI() > 0) {
             pool.execute(() -> sell.sell());
@@ -32,7 +26,7 @@ public class SellTicketsDemo {
     @Data
     public static class Sell {
         //Lock锁
-        Lock lock = new ReentrantLock(true);
+        Lock lock = new ReentrantLock();
 
         //火车票数量
         int i = 100;
@@ -40,10 +34,8 @@ public class SellTicketsDemo {
         private void sell() {
             try {
                 lock.lock();
-                Thread.sleep(10000);
                 if (i > 0) {
                     System.out.println(Thread.currentThread().getName() + "正在卖第:" + (100 - getI() + 1) + "张票");
-                    System.out.println(LocalDateTime.now());
                     i--;
                 }
             } catch (Exception e) {
