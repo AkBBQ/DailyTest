@@ -27,4 +27,15 @@ public class Proxy implements InvocationHandler {
         System.out.println("After invoke " + method.getName());
         return null;
     }
+
+    public static void main(String[] args) {
+        Producer producer= new Producer();
+        Proxy proxy = new Proxy(producer);
+        try {
+            proxy.invoke(producer,producer.getClass().getMethod("Sell"),null);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+    }
+
 }

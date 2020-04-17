@@ -3,6 +3,7 @@ package JUC.xiancheng.ThreadSafe;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -35,7 +36,9 @@ public class SellTicketsDemo {
             try {
                 lock.lock();
                 if (i > 0) {
+                    Thread.sleep(1000);
                     System.out.println(Thread.currentThread().getName() + "正在卖第:" + (100 - getI() + 1) + "张票");
+                    System.out.println(LocalDateTime.now());
                     i--;
                 }
             } catch (Exception e) {

@@ -1,5 +1,7 @@
 package JUC.xiancheng.ThreadSafe;
 
+import java.time.LocalDateTime;
+
 /**
  * 线程安全 多窗口抢火车票
  */
@@ -10,8 +12,8 @@ public class SynchronizedDemo {
 
     public static void main(String[] args) throws InterruptedException {
         SallThread sallThread = new SallThread();
-        Thread t1 = new Thread(sallThread, "窗口1");
-        Thread t2 = new Thread(sallThread, "窗口2");
+        Thread t1 = new Thread(sallThread);
+        Thread t2 = new Thread(sallThread);
         t1.start();
         //等待t1线程全部执执行结束
         //t1.join();
@@ -51,6 +53,7 @@ public class SynchronizedDemo {
             synchronized (object) {
                 if (count > 0) {
                     System.out.println(Thread.currentThread().getName() + "出售第" + (10 - count + 1) + "张火车票");
+                    System.out.println(LocalDateTime.now());
                     count--;
                 }
             }
