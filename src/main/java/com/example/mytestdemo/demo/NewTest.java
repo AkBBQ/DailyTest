@@ -16,7 +16,7 @@ public class NewTest {
     public static void main(String[] args) {
         Map<String,Integer> map=new HashMap<>();
         map.put("hello",2);
-       // System.out.println(map.get("hello").equals(2));
+        System.out.println(map.get("hello").equals(2));
 
         String s="12345";
         System.out.println(s.substring(1,3));

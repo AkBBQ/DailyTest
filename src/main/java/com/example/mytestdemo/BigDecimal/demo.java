@@ -13,10 +13,10 @@ import java.math.BigDecimal;
 
 public class demo {
     public static void main(String[] args) {
-        BigDecimal a =  new BigDecimal("0");
-        BigDecimal b =  new BigDecimal("1");
+        BigDecimal a =  new BigDecimal("3");
+        BigDecimal b =  new BigDecimal("5");
         //加
-        BigDecimal c =a.add(b);
+        BigDecimal c =b.add(b.add(a));
         System.out.println(c);
     }
 }

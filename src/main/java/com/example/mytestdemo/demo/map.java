@@ -29,18 +29,27 @@ public class map {
         list1.addAll(4,list2);
         list2.add(list1.subList(1,2));
 
-        System.out.println(list1);
-        System.out.println(list2);
+        /*System.out.println(list1);
+        System.out.println(list2);*/
 
         //重复放相同的key会覆盖前面的
         Map<Integer,String> map =new HashMap<>();
         map.put(1,"1");
-        map.put(1,"2");
-        map.put(1,"3");
-        map.put(2,"3");
+        map.put(2,"2");
+        map.put(3,"3");
+        map.put(4,"4");
         System.out.println(map.size());
 
+        Iterator iterator = map.keySet().iterator();
+        while (iterator.hasNext()){
+            Object key = iterator.next();
+            System.out.println(key+":"+map.get(key));
+        }
+        System.out.println("**************************");
 
-
+        for (Map.Entry<Integer, String> entry:map.entrySet()) {
+            System.out.println(entry.getKey()+":"+entry.getValue());
+        }
+        System.out.println("**************************");
     }
 }
