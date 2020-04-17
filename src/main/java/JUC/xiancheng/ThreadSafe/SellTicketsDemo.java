@@ -1,11 +1,9 @@
 package JUC.xiancheng.ThreadSafe;
 
+
 import lombok.Data;
 
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -16,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class SellTicketsDemo {
     public static void main(String[] args) {
         //1、使用自定义线程池
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5, 2, TimeUnit.SECONDS, new ArrayBlockingQueue(10));
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5, 2, TimeUnit.SECONDS, new LinkedBlockingDeque<>());
 
         Sell sell = new Sell();
         while (sell.getI() > 0) {
@@ -36,8 +34,10 @@ public class SellTicketsDemo {
         private void sell() {
             try {
                 lock.lock();
-                System.out.println(Thread.currentThread().getName() + "正在卖第:" + (100 - getI() + 1) + "张票");
-                i--;
+                if (i > 0) {
+                    System.out.println(Thread.currentThread().getName() + "正在卖第:" + (100 - getI() + 1) + "张票");
+                    i--;
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
