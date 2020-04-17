@@ -19,21 +19,10 @@ public class SellTicketsDemo {
         ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5, 2, TimeUnit.SECONDS, new ArrayBlockingQueue(10));
 
         Sell sell = new Sell();
-
-        pool.execute(() -> sell.sell());
-
-        //👆等价于👇
-//        pool.execute(new Runnable() {
-//            @Override
-//            public void run() {
-//                sell.sell();
-//            }
-//        });
+        while (sell.getI() > 0) {
+            pool.execute(() -> sell.sell());
+        }
         pool.shutdown();
-
-        //2、使用Feature 执行异步线程
-        CompletableFuture.runAsync(() -> sell.sell());
-
     }
 
     @Data
@@ -42,15 +31,13 @@ public class SellTicketsDemo {
         Lock lock = new ReentrantLock();
 
         //火车票数量
-        int i = 20;
+        int i = 100;
 
         private void sell() {
             try {
                 lock.lock();
-                while (i > 0) {
-                    System.out.println(Thread.currentThread().getName() + "正在卖第:" + (20 - getI() + 1) + "张票");
-                    i--;
-                }
+                System.out.println(Thread.currentThread().getName() + "正在卖第:" + (100 - getI() + 1) + "张票");
+                i--;
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
