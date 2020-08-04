@@ -22,5 +22,17 @@ public class demo {
         map2.putAll(map1);
         }
         System.out.println(map2);
+
+
+        String name ="   sss   ";
+
+
+        System.out.println(name.trim());
+
+
+        String s ="32092319970412481x";
+        System.out.println(s.toUpperCase());
+
+
     }
 }
