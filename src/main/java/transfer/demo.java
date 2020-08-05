@@ -10,12 +10,6 @@ public class demo {
         add(a);
         System.out.println(a);
 
-        //无用提交 1
-
-        //无用提交 2
-
-        //无用提交 3
-
     }
 
 
