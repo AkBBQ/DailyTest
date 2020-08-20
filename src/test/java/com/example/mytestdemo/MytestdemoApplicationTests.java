@@ -2,8 +2,8 @@ package com.example.mytestdemo;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.example.mytestdemo.Bean.AppConfig;
-import com.example.mytestdemo.demo.HeelloRunnable;
-import com.example.mytestdemo.demo.HelloThread;
+import com.example.mytestdemo.JavaDemo.demo.HeelloRunnable;
+import com.example.mytestdemo.JavaDemo.demo.HelloThread;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package com.example.mytestdemo.Config;
 
-import com.example.mytestdemo.Aop.DefineAopWithAnnotion.LoginInterceptor;
+import com.example.mytestdemo.HighJavaDemo.Aop.DefineAopWithAnnotion.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
