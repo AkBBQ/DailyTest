@@ -1,5 +1,6 @@
 package com.example.mytestdemo;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.example.mytestdemo.Bean.AppConfig;
 import com.example.mytestdemo.demo.HeelloRunnable;
 import com.example.mytestdemo.demo.HelloThread;
@@ -7,13 +8,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MytestdemoApplicationTests {
+
+    @Resource
+    DataSource dataSource;
 
     @Autowired
     private AppConfig appConfig;
@@ -39,6 +46,19 @@ public class MytestdemoApplicationTests {
 //        applicationContext.getBean("test");
         //可以通过注入的方式获取Bean
         appConfig.test();
+    }
+
+    @Test
+    public void dateSource() throws SQLException {
+        System.out.println("数据源" + dataSource.getClass());
+        Connection connection = dataSource.getConnection();
+        System.out.println("链接:" + connection);
+        System.out.println("链接地址:" + connection.getMetaData().getURL());
+
+        DruidDataSource druidDataSource = (DruidDataSource)dataSource;
+        System.out.println("druid链接最大数:" + druidDataSource.getMaxActive());
+        System.out.println("druid初始化连接数:" + druidDataSource.getInitialSize());
+        connection.close();
     }
 }
 
