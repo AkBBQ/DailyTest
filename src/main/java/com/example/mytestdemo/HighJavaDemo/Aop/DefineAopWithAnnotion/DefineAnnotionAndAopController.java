@@ -19,8 +19,8 @@ public class DefineAnnotionAndAopController {
 
     @NoLogin
     @RequestMapping("/two")
-    public String two() {
-        return "two";
+    public void two() {
+        System.out.println("123");
     }
 
 

@@ -26,6 +26,12 @@ public class LoginInterceptor  implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("小子、被我拦截了吧");
 
+        //如果请求为静态资源请求时，类型转换会报错，类型不对应，所以应再请求时方法请求时再转换类型
+        // 如果不是映射到方法直接通过
+        if (!(handler instanceof HandlerMethod)) {
+            return true;
+        }
+        //当请求为方法时，再转换类型
         HandlerMethod handlerMethod = (HandlerMethod)handler;
         //获取方法上免登的注解
         NoLogin annotation = handlerMethod.getMethod().getAnnotation(NoLogin.class);

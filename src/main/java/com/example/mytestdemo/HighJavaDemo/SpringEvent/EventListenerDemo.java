@@ -1,4 +1,5 @@
 package com.example.mytestdemo.HighJavaDemo.SpringEvent;
+import com.alibaba.fastjson.JSON;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,7 @@ public class EventListenerDemo {
 
     @EventListener(condition = "#event.getId().equals(1)")
     public void orderEventLinstener(Event event){
-        System.out.println("接收到事件了弟弟!");
+        System.out.println("接收到事件了弟弟!,接收到的内容为:"+JSON.toJSON(event));
 
     }
 }
