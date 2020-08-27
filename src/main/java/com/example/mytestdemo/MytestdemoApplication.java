@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @Slf4j
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.mytestdemo.HighJavaDemo.SpringEvent","com.example.mytestdemo"})
+@ComponentScan(basePackages = {"com.example.mytestdemo.*"})
 public class MytestdemoApplication {
 
     public static void main(String[] args) {
@@ -19,7 +19,6 @@ public class MytestdemoApplication {
         log.info("myTestDemo started url: http://localhost:" + port + "/hello");
 
         log.info("myTestDemo  druid started  url : http://localhost:" + port + "/druid");
-        SpringApplication.run(MytestdemoApplication.class, args);
     }
 
 }
