@@ -14,6 +14,11 @@ spring:
     maxActive: 20
     maxWait: 60000
 
+  # 控制台高亮输出
+  output:
+    ansi:
+      enabled: always
+
   redis:
     database: 0
     host: 47.106.8.7
