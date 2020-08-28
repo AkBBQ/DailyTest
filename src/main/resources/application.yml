@@ -5,7 +5,7 @@ spring:
   datasource:
     username: sunjie
     password: 970306
-    url: jdbc:mysql://47.106.8.7:3306/db_book?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://47.106.8.7:3306/db_test?useUnicode=true&characterEncoding=utf-8&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #druid 数据源专有配置
@@ -35,4 +35,28 @@ spring:
 
 server:
   port: 9090
+
+mybatis-plus:
+  #  mapper文件位置 Maven 多模块项目的扫描路径需以 classpath*: 开头 （即加载多个 jar 包下的 XML 文件）
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  #  MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名 可直接使用类名
+  type-aliases-package: com.book.dal.domain
+  configuration:
+    #    驼峰法
+    map-underscore-to-camel-case: true
+    #    懒加载
+    aggressive-lazy-loading: false
+    #    开启缓存
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      #      主键增长类型
+      id-type: auto
+      #      字段判断策略
+      field-strategy: not_empty
+      #      逻辑删除配置
+      logic-delete-field: is_deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 

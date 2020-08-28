@@ -2,8 +2,11 @@ package com.example.mytestdemo;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.example.mytestdemo.Bean.AppConfig;
+import com.example.mytestdemo.Config.Md5Util;
 import com.example.mytestdemo.JavaDemo.demo.HeelloRunnable;
 import com.example.mytestdemo.JavaDemo.demo.HelloThread;
+import com.example.mytestdemo.domain.PeopleDO;
+import com.example.mytestdemo.manager.PeopleManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,9 @@ public class MytestdemoApplicationTests {
 
     @Autowired
     private AppConfig appConfig;
+
+    @Autowired
+    private PeopleManager peopleManager;
 
     @Test
     public void contextLoads() {
@@ -59,6 +65,14 @@ public class MytestdemoApplicationTests {
         System.out.println("druid链接最大数:" + druidDataSource.getMaxActive());
         System.out.println("druid初始化连接数:" + druidDataSource.getInitialSize());
         connection.close();
+    }
+
+    @Test
+    public void addOneUser(){
+        PeopleDO peopleDO = new PeopleDO();
+        peopleDO.setAge(66);
+        peopleDO.setName(Md5Util.getSaltMD5("123456sj"));
+        peopleManager.save(peopleDO);
     }
 }
 
