@@ -17,8 +17,9 @@
 
 
 ##0827 
-1. 引入 mybatis-plus
+1. mybatis-plus
 2. MD5工具 盐值加密
+3. 全局异常处理
 
 [CHANGELOG]: ./CHANGELOG.md
 [version-badge]: https://img.shields.io/badge/version-1.1.6-blue.svg
