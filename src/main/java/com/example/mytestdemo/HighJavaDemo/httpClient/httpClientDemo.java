@@ -1,7 +1,7 @@
 package com.example.mytestdemo.HighJavaDemo.httpClient;
 
 import com.alibaba.fastjson.JSONObject;
-import com.example.mytestdemo.Model.Student;
+import com.example.mytestdemo.Command.Student;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;

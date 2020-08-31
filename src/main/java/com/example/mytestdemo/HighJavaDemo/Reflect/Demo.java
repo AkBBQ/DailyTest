@@ -1,6 +1,6 @@
 package com.example.mytestdemo.HighJavaDemo.Reflect;
 
-import com.example.mytestdemo.Model.Student;
+import com.example.mytestdemo.Command.Student;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 public class Demo {
     public static void main(String[] args) {
         try {
-            Class aClass = Class.forName("com.example.mytestdemo.Model.Student");
+            Class aClass = Class.forName("com.example.mytestdemo.Command.Student");
 
             Constructor constructor = aClass.getConstructor();
 

@@ -6,6 +6,10 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NonNull;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * <p>
@@ -27,6 +31,7 @@ public class PeopleDO implements Serializable {
 
     private String name;
 
+    @NotEmpty(message = "姓名不能为空")
     private Integer age;
 
 

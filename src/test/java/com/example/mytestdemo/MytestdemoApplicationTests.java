@@ -70,8 +70,8 @@ public class MytestdemoApplicationTests {
     @Test
     public void addOneUser(){
         PeopleDO peopleDO = new PeopleDO();
-        peopleDO.setAge(66);
-        peopleDO.setName(Md5Util.getSaltMD5("123456sj"));
+//        peopleDO.setAge(66);
+        peopleDO.setName(Md5Util.getSaltMD5("2222"));
         peopleManager.save(peopleDO);
     }
 }

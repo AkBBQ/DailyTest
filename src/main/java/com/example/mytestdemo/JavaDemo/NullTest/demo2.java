@@ -1,6 +1,6 @@
 package com.example.mytestdemo.JavaDemo.NullTest;
 
-import com.example.mytestdemo.Model.User;
+import com.example.mytestdemo.Command.User;
 
 /**
  * All rights Reserved, Designed By www.maihaoche.com

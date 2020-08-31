@@ -1,6 +1,6 @@
 package com.example.mytestdemo.JavaDemo.Stream;
 
-import com.example.mytestdemo.Model.User;
+import com.example.mytestdemo.Command.User;
 
 import java.util.*;
 import java.util.stream.Collectors;

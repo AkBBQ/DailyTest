@@ -1,6 +1,6 @@
 package com.example.mytestdemo.JavaDemo.Scanner;
 
-import com.example.mytestdemo.Model.User;
+import com.example.mytestdemo.Command.User;
 
 import java.util.HashMap;
 import java.util.Map;

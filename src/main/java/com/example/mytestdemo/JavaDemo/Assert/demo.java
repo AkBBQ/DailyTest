@@ -1,6 +1,6 @@
 package com.example.mytestdemo.JavaDemo.Assert;
 
-import com.example.mytestdemo.Model.User;
+import com.example.mytestdemo.Command.User;
 import org.springframework.util.Assert;
 
 /**

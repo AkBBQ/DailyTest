@@ -1,6 +1,6 @@
 package com.example.mytestdemo.JavaDemo.demo;
 
-import com.example.mytestdemo.Model.User;
+import com.example.mytestdemo.Command.User;
 
 import java.util.ArrayList;
 import java.util.List;
