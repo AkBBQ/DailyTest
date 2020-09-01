@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.util.Optional;
 
 /**
@@ -22,27 +21,17 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({Exception.class})
     @ResponseBody
-    public ApiResult myErr(Exception e,HttpServletRequest request) {
-        log.info("接口出现异常:{},错误原因:{}", request.getRequestURI(),e.getMessage());
+    public ApiResult myErr(Exception e, HttpServletRequest request) {
+        log.info("接口出现异常:{},错误原因:{}", request.getRequestURI(), e.getMessage());
+        //如果是自定义异常
+        if (e instanceof MyException) {
+            return ApiResult.err("自定义业务异常");
+        //参数校验统一异常处理
+        } else if (e instanceof MethodArgumentNotValidException) {
+            MethodArgumentNotValidException ex = (MethodArgumentNotValidException) e;
+            FieldError fieldError = ex.getBindingResult().getFieldError();
+            return ApiResult.err(Optional.ofNullable(fieldError).map(DefaultMessageSourceResolvable::getDefaultMessage).orElse("参数校验统一异常处理异常"));
+        }
         return ApiResult.err(e.getMessage());
     }
-
-    @ExceptionHandler({MyException.class})
-    @ResponseBody
-    public ApiResult myErr(HttpServletRequest request, HttpServletResponse response) {
-        log.info("接口出现异常:{}", request.getRequestURI());
-        return ApiResult.err("自定义业务异常");
-    }
-
-
-//    /**
-//     * 参数校验统一异常处理
-//     */
-//    @ExceptionHandler(MethodArgumentNotValidException.class)
-//    @ResponseBody
-//    public ApiResult handleBindException(MethodArgumentNotValidException ex) {
-//        FieldError fieldError = ex.getBindingResult().getFieldError();
-//        return ApiResult.err(Optional.ofNullable(fieldError).map(DefaultMessageSourceResolvable::getDefaultMessage).orElse("参数校验统一异常处理异常"));
-//    }
-
 }
