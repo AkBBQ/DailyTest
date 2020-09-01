@@ -25,3 +25,4 @@
 /.nb-gradle/
 /mvnw
 !/mvnw.cmd
+/hibernate-validator_参数校验.patch
