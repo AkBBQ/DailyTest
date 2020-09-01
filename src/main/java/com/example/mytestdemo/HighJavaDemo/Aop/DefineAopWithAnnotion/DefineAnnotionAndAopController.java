@@ -22,11 +22,4 @@ public class DefineAnnotionAndAopController {
     public void two() {
         System.out.println("123");
     }
-
-
-    public static void main(String[] args) {
-
-
-    }
-
 }

@@ -20,6 +20,7 @@
 1. mybatis-plus
 2. MD5工具 盐值加密
 3. 全局异常处理
+4. hibernate-validator 对参数进行验证
 
 [CHANGELOG]: ./CHANGELOG.md
 [version-badge]: https://img.shields.io/badge/version-1.1.6-blue.svg

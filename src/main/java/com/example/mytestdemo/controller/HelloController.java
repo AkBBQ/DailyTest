@@ -1,9 +1,16 @@
 package com.example.mytestdemo.controller;
 
 import com.example.mytestdemo.Command.QueryCommand;
+import com.example.mytestdemo.Config.MyException;
+import org.hibernate.validator.constraints.Range;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +22,7 @@ import java.util.List;
  * @date: 2019/1/17 1:59 PM
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
  */
-
+@Validated
 @RestController
 public class HelloController {
 
@@ -29,19 +36,41 @@ public class HelloController {
     }
 
     /**
+     * hibernate-validator
+     * post请求
      *
      * @param query
      * @return
      */
-    @RequestMapping(value = "query", method = RequestMethod.GET)
-    public int query(@Validated QueryCommand query) {
-        try {
-            int id = query.getId();
-            return id;
-        } catch (Exception e) {
-            System.out.println("异常啦!");
-        }
-        return 123;
+    @RequestMapping(value = "query", method = RequestMethod.POST)
+    public QueryCommand query1(@RequestBody @Valid QueryCommand query) {
+        return query;
+
+    }
+
+    /**
+     * hibernate-validator
+     * get请求
+     *
+     * @param query
+     * @return
+     */
+    @RequestMapping(value = "query2", method = RequestMethod.GET)
+    public QueryCommand query2(@Valid @RequestBody QueryCommand query) {
+        return query;
+
+    }
+
+    /**
+     * hibernate-validator
+     * get请求
+     *
+     * @return
+     */
+    @RequestMapping(value = "query3", method = RequestMethod.GET)
+    public String query3(@NotNull(message = "姓名不能为空") String name,
+                         @Range(min = 1,max = 3) int age) {
+      return name;
     }
 
     /**
@@ -50,8 +79,17 @@ public class HelloController {
      * @return
      */
     @RequestMapping(value = "err", method = RequestMethod.GET)
-    public void query() {
+    public void err() {
         throw new RuntimeException("异常");
     }
 
+    /**
+     * 手动抛出自定义异常 让全局异常处理器接异常消息
+     *
+     * @return
+     */
+    @RequestMapping(value = "myErr", method = RequestMethod.GET)
+    public void myErr() throws MyException {
+            throw new MyException("自定义异常");
+    }
 }

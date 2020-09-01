@@ -1,7 +1,9 @@
 package com.example.mytestdemo.Command;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 /**
  * All rights Reserved, Designed By www.maihaoche.com
@@ -17,6 +19,10 @@ public class QueryCommand {
 
     private int id;
 
-    @NotEmpty(message = "姓名不能为空!")
+    @NotBlank(message = "姓名不能为空!")
     private String name;
+
+    @Email
+    @NotBlank(message = "邮箱不能为空!")
+    private String email;
 }
