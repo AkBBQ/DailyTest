@@ -59,6 +59,7 @@ public class TreeUtils {
         return false;
     }
 
+    //实体类转MAP
     public static Map<String, Object> object2Map(Object obj) {
         Map<String, Object> map = new HashMap<>();
         if (obj instanceof Map) {
