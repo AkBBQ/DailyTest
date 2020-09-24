@@ -1,16 +1,16 @@
 package com.example.mytestdemo.manager;
 
+import com.example.mytestdemo.domain.UserDO;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.mytestdemo.domain.PeopleDO;
 
 /**
  * <p>
- *  服务类
+ * 用户表 服务类
  * </p>
  *
  * @author angtai
- * @since 2020-08-27
+ * @since 2020-09-10
  */
-public interface PeopleManager extends IService<PeopleDO> {
+public interface UserManager extends IService<UserDO> {
 
 }
