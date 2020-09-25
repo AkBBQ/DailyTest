@@ -1,6 +1,7 @@
 package com.example.mytestdemo.controller;
 
 import com.example.mytestdemo.Config.ApiResult;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,6 +43,18 @@ public class PageController {
     @ResponseBody
     public ApiResult<?> adminQuery() {
         return ApiResult.err("管理员查询");
+    }
+
+    /**
+     * 角色为 admin 才能更新
+     *
+     * @return
+     */
+    @RequiresRoles("admin")
+    @GetMapping(value = "/admin/update.json")
+    @ResponseBody
+    public ApiResult<?> adminUpdate() {
+        return ApiResult.ok("管理员更新");
     }
 
 
