@@ -23,6 +23,10 @@ public class ApiResult<T> {
         return (ApiResult<T>) ApiResult.builder().code(200).data(t).success(true).build();
     }
 
+    public static <T>ApiResult<T> ok(){
+        return (ApiResult<T>) ApiResult.builder().code(200).data("").success(true).build();
+    }
+
     public static <T>ApiResult<T> err(T t){
         return (ApiResult<T>) ApiResult.builder().code(500).data(t).success(false).build();
     }

@@ -120,6 +120,12 @@
             <version>3.3.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+
         <!-- mybatisPlus自动生成-->
         <dependency>
             <groupId>com.baomidou</groupId>
