@@ -30,6 +30,7 @@ public class LoginController {
     @ResponseBody
     public ApiResult<?> login(UserForm userForm) {
         UsernamePasswordToken token = new UsernamePasswordToken(userForm.getName(), userForm.getPassword());
+        token.setRememberMe(userForm.getRememberMe());
         //获取当前的Subject
         Subject currentUser = SecurityUtils.getSubject();
         try {
@@ -45,6 +46,15 @@ public class LoginController {
         } catch (Exception e) {
             return ApiResult.err(null, e.getMessage());
         }
+        return ApiResult.ok();
+    }
+
+
+    @GetMapping(value = "/logOut.json")
+    @ResponseBody
+    public ApiResult<?> logOut() {
+        Subject currentUser = SecurityUtils.getSubject();
+        currentUser.logout();
         return ApiResult.ok();
     }
 }

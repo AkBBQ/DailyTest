@@ -20,4 +20,9 @@ public class UserForm {
      * 密码
      */
     private String password;
+
+    /**
+     * 记住我
+     */
+    private Boolean rememberMe;
 }
