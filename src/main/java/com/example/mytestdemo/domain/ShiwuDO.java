@@ -1,13 +1,15 @@
 package com.example.mytestdemo.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author angtai
@@ -18,12 +20,12 @@ import lombok.EqualsAndHashCode;
 @TableName("shiwu")
 public class ShiwuDO implements Serializable {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * 主键id 不自增
      */
-      private Integer id;
+    private Integer id;
 
     private String value;
 
