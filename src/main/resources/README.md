@@ -23,7 +23,7 @@
 4. hibernate-validator 对参数进行验证
 5. 敏感词过滤Util
 6. springboot集合shiro 
-
+7. Spring事务
 [CHANGELOG]: ./CHANGELOG.md
 [version-badge]: https://img.shields.io/badge/version-1.1.6-blue.svg
 

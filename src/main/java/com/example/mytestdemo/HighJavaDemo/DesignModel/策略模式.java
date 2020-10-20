@@ -1,4 +1,4 @@
-package com.example.mytestdemo.HighJavaDemo;
+package com.example.mytestdemo.HighJavaDemo.DesignModel;
 
 /**
  * All rights Reserved, Designed By www.maihaoche.com
