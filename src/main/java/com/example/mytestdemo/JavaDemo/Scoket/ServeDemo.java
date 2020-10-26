@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * 服务器
+ * 1 先启动服务器
  */
 
 public class ServeDemo {

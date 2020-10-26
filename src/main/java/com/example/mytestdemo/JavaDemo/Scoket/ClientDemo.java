@@ -7,16 +7,17 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
- * socket测试
+ * 2 后启动客户端
  *
  * @author angtai
  */
 
-public class CilentDemo {
+public class ClientDemo {
+    private static  final  String host="localhost";
     public static void main(String[] args) {
         try {
             // 创建 Socket 用来发起请求，设置请求 IP 为本机，端口号为 8080
-            Socket socket = new Socket("127.0.0.1", 3300);
+            Socket socket = new Socket(host,8080);
             // 通过 Socket 的流对象创建 PrintWriter 用于发送请求数据，创建 BufferedReader 用于接收服务端响应数据
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
