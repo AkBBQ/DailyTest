@@ -1,4 +1,4 @@
-package com.example.mytestdemo.JavaDemo.Scoket;
+package com.example.mytestdemo.JavaDemo.Scoket.BIO;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,17 +7,19 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
+ * BIO 同步阻塞IO
  * 2 后启动客户端
  *
  * @author angtai
  */
 
 public class ClientDemo {
-    private static  final  String host="localhost";
+    private static final String host = "localhost";
+
     public static void main(String[] args) {
         try {
             // 创建 Socket 用来发起请求，设置请求 IP 为本机，端口号为 8080
-            Socket socket = new Socket(host,8080);
+            Socket socket = new Socket(host, 8080);
             // 通过 Socket 的流对象创建 PrintWriter 用于发送请求数据，创建 BufferedReader 用于接收服务端响应数据
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
