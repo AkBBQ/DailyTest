@@ -1,7 +1,9 @@
 package com.example.mytestdemo.JavaDemo.Stream;
 
 import com.example.mytestdemo.Command.User;
+import com.example.mytestdemo.JavaDemo.demo.B;
 
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 

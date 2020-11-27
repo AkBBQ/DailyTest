@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
-public class DemoController {
+public class RESTDemoController {
 
     @GetMapping("user")
     public Object findAllUsers() {

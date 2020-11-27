@@ -2,15 +2,21 @@ package com.example.mytestdemo.controller;
 
 import com.example.mytestdemo.Command.QueryCommand;
 import com.example.mytestdemo.Config.MyException;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,16 +29,17 @@ import java.util.List;
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
  */
 @Validated
-@RestController
+@Controller
 public class HelloController {
 
     @RequestMapping("/hello")
-    public List<?> hello() {
+    public void hello(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException {
         List<String> list = new ArrayList();
         list.add("22");
         list.add("33");
         list.add("王八蛋");
-        return list;
+        httpResponse.sendRedirect("https://www.baidu.com");
+//        return list;
     }
 
     /**
