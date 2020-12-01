@@ -29,17 +29,17 @@ import java.util.List;
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
  */
 @Validated
-@Controller
+@RestController
 public class HelloController {
 
     @RequestMapping("/hello")
-    public void hello(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException {
+    public Object hello(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException {
         List<String> list = new ArrayList();
         list.add("22");
         list.add("33");
         list.add("王八蛋");
-        httpResponse.sendRedirect("https://www.baidu.com");
-//        return list;
+       // httpResponse.sendRedirect("https://www.baidu.com");
+        return list;
     }
 
     /**

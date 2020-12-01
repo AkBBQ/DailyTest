@@ -10,9 +10,13 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * 登录
@@ -26,9 +30,10 @@ public class LoginController {
     @Autowired
     private UserManager userManager;
 
+
     @GetMapping(value = "/login.json")
     @ResponseBody
-    public ApiResult<?> login(UserForm userForm) {
+    public ApiResult<?> login(UserForm userForm, HttpServletResponse httpServletResponse) {
         UsernamePasswordToken token = new UsernamePasswordToken(userForm.getName(), userForm.getPassword());
         token.setRememberMe(userForm.getRememberMe());
         //获取当前的Subject
@@ -43,6 +48,11 @@ public class LoginController {
             }
             UserDO currentUser1 = userManager.getCurrentUser();
             log.info("当前登录的用户为{}", JSON.toJSONString(currentUser1));
+
+            //与shiro无关的实验 登录完成后将用户名字放到cookie中
+            //实际上应该放入有有效期限制的sessionId 也叫token
+            //后续的所有请求 都要验证token的登录时效性 来判断是否放行或者重新登录
+            httpServletResponse.addCookie(new Cookie("userName", currentUser1.getName()));
         } catch (Exception e) {
             return ApiResult.err(null, e.getMessage());
         }
