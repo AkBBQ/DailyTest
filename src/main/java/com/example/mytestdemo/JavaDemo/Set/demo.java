@@ -1,5 +1,9 @@
 package com.example.mytestdemo.JavaDemo.Set;
 
+import com.example.mytestdemo.HighJavaDemo.Aop.People;
+import com.example.mytestdemo.JavaDemo.Stream.testDemo.Student;
+
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.*;
 
@@ -14,21 +18,22 @@ import java.util.*;
 
 public class demo {
     public static void main(String[] args) {
-        List<String> ss = new ArrayList<>();
-        ss.add("aa");
-        ss.add("aa");
-        ss.add("bb");
 
-        System.out.println(ss);
+        int a =10;
+        int b = 20;
+        int c = 30;
+        //只要是姓名和手机号码一样 我们就认为是一个人
+        People p1 = new People("zhangsan","20","1525",1);
+        People p2 = new People("zhangsan","20","1525",1);
 
-        //list转Set
-        Set<String> hh = new HashSet<>(ss);
-        System.out.println(hh);
+        System.out.println(p1.hashCode());
+        System.out.println(p2.hashCode());
+        System.out.println(p2.hashCode());
+        System.out.println(p2.hashCode());
+        System.out.println(p2.hashCode());
 
-        Set<String> s =new HashSet<>();
-        s.add("123");
-        s.add("123");
-        s.add("456");
-        System.out.println(s);
+
+
+
     }
 }

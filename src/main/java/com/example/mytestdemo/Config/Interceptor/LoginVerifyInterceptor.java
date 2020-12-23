@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,6 +27,9 @@ public class LoginVerifyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
+        HttpSession session = request.getSession();
+        Object session1 = session.getAttribute("user");
+
         List<Cookie> cookieList = Arrays.stream(cookies).filter(item -> item.getName().equals("userName")).collect(Collectors.toList());
         if (!CollectionUtils.isEmpty(cookieList)) {
             String userName = cookieList.get(0).getValue();

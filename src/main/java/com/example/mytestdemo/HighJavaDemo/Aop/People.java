@@ -15,5 +15,16 @@ import lombok.Data;
 public class People {
     String name;
     String age;
+    String phone;
+    int size;
 
+    public People(String name, String age, String phone,int size) {
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        this.size = size;
+    }
+
+    public People() {
+    }
 }
