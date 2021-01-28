@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * CAS实现
+ * 这种原子类会产生ABA问题
  */
 
 public class CasDemo {
