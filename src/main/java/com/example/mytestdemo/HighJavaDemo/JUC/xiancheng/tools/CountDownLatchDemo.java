@@ -1,4 +1,4 @@
-package com.example.mytestdemo.HighJavaDemo.JUC;
+package com.example.mytestdemo.HighJavaDemo.JUC.xiancheng.tools;
 
 
 import java.util.concurrent.CountDownLatch;
@@ -8,8 +8,7 @@ import java.util.concurrent.CountDownLatch;
  */
 
 public class CountDownLatchDemo {
-    private static final CountDownLatch mainCountDown = new CountDownLatch(1);
-    private static final CountDownLatch otherCountDown = new CountDownLatch(6);
+    private static final CountDownLatch otherCountDown = new CountDownLatch(5);
 
     public static void main(String[] args) {
 

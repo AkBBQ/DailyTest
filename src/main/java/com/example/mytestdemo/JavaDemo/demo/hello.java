@@ -1,5 +1,7 @@
 package com.example.mytestdemo.JavaDemo.demo;
 
+import java.util.*;
+
 /**
  * All rights Reserved, Designed By www.maihaoche.com
  *
@@ -11,6 +13,23 @@ package com.example.mytestdemo.JavaDemo.demo;
 
 public class hello {
     public static void main(String[] args) {
-        System.out.println("Hello");
+        Set set = new HashSet();
+        set.add("2");
+
+        List list = Collections.emptyList();
+        list.add("");
+
+        A a = new A();
+        System.out.println(a.getClass().getClassLoader());
+        System.out.println(a.getClass().getClassLoader().getParent());
+        System.out.println(a.getClass().getClassLoader().getParent().getParent());
+
+        //返回 JVM 堆大小
+        long initalMemory = Runtime.getRuntime().totalMemory() / 1024 /1024;
+        //返回 JVM 堆的最大内存
+        long maxMemory = Runtime.getRuntime().maxMemory() / 1024 /1024;
+
+        System.out.println("-Xms : "+initalMemory + "M");
+        System.out.println("-Xmx : "+maxMemory + "M");
     }
 }

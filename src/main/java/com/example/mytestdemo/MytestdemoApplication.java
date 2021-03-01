@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class MytestdemoApplication {
 
     public static void main(String[] args) {
-        // 启动应用程序，返回应用程序上下文
+        // 启动应用程序，返回应用程序上下文C o
         ConfigurableApplicationContext context = SpringApplication.run(MytestdemoApplication.class, args);
         //通过getEnvironment(),getProperty()方法获取配置属性值
         String port = context.getEnvironment().getProperty("server.port");

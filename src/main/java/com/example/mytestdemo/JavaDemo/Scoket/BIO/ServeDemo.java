@@ -13,7 +13,7 @@ public class ServeDemo {
     public static void main(String[] args) {
         try {
             ServerSocket serverSocket = new ServerSocket(8080);
-            // 调用 accept() 方法监听客户端请求，该方法是阻塞方法，程序会停留在这里直到有客户端请求服务端的 3300 接口
+            // 调用 accept() 方法监听客户端请求，该方法是阻塞方法，程序会停留在这里直到有客户端请求服务端的8080 接口
             //Socket 用于通信中的数据传输
             Socket socket = serverSocket.accept();
             //从socket中拿到输入流

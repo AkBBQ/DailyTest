@@ -12,6 +12,9 @@ import java.util.Set;
 
 /**
  * NIO 客户端
+ * ByteBuffer 缓冲区、Selector 多路复用器、channel
+ *
+ * 多个channel注册搭配Selector
  */
 
 public class Server {
@@ -55,7 +58,7 @@ public class Server {
                 }
                 if (key.isReadable()) { //发生 OP_READ
                     SocketChannel channel = (SocketChannel) key.channel();
-                    //获取到该channel关联的buffer
+                    //获取到该channel关联的buffer缓冲区
                     ByteBuffer buffer = (ByteBuffer) key.attachment();
                     channel.read(buffer);
                     System.out.println("from 客户端 " + new String(buffer.array()));
