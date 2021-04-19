@@ -10,6 +10,21 @@ package com.example.mytestdemo.HighJavaDemo.proxy.JDK.demoTwo;
  */
 public interface LoginService {
 
-    void login(String userName,String password);
+    void login(String userName, String password);
 
+
+    /**
+     * 匿名内部类
+     *
+     * @param args
+     */
+    static void main(String[] args) {
+        LoginService loginService = new LoginService() {
+            @Override
+            public void login(String userName, String password) {
+                System.out.println("123");
+            }
+        };
+        loginService.login("s", "2");
+    }
 }
