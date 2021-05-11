@@ -60,3 +60,7 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
+
+#自定义配置
+info:
+  name: sunjie
