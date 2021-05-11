@@ -10,6 +10,8 @@ import javax.annotation.PostConstruct;
  * @PostConstruct注解的方法会将在依赖注入完成之后被自动调用。该注解在整个Bean初始化中执行的顺序：
  *
  * @Constructor（构造方法）->@Autowired（依赖注入）->@PostConstruct（注解的方法）
+ *
+ * 验证可以在构造方法和init中各自打一个断点 发现在初始化顺序的确为上面所诉
  * @author sunjie
  */
 @Component
