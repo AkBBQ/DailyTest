@@ -9,6 +9,7 @@ public interface UserService {
 
     /**
      * 定义的变量类似于静态变量 类似于枚举 实现类可以直接使用
+     * 其他类中也可以直接使用接口.变量名 使用
      */
 
     String SUN_JIE = "HELLO WORLD";
