@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author sunjie
  */
-@FeignClient(name = "myUserService", url = "http://localhost:8080/third/server/")
-public interface UserService {
+@FeignClient(name = "myUserService", url = "http://localhost:8080/third/server/",configuration = UserServiceFeignConfiguration.class)
+public interface UserServiceFeign {
 
     @GetMapping("query/{name}")
     @ResponseBody

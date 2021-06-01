@@ -18,7 +18,7 @@ import java.io.IOException;
 public class LocalController {
 
     @Autowired
-    private UserService userService;
+    private UserServiceFeign userServiceFeign;
 
 
     /**
@@ -27,7 +27,7 @@ public class LocalController {
      */
     @GetMapping("/localQuery/{name}")
     public void hello1(@PathVariable("name") String name) throws IOException {
-        ResponseEntity<String> responseData = userService.query(name);
+        ResponseEntity<String> responseData = userServiceFeign.query(name);
         System.out.println("=============================" + responseData);
     }
 
@@ -38,7 +38,7 @@ public class LocalController {
      */
     @GetMapping("/localQuery2/{name}")
     public void hello2(@PathVariable("name") String name) throws IOException {
-        ResponseEntity<String> responseData = userService.query2(name);
+        ResponseEntity<String> responseData = userServiceFeign.query2(name);
         System.out.println(responseData);
 
     }
@@ -52,7 +52,7 @@ public class LocalController {
         CrmMember crmMember = new CrmMember();
         crmMember.setName("Li");
         crmMember.setAge(26);
-        ResponseEntity<String> responseData = userService.add(crmMember);
+        ResponseEntity<String> responseData = userServiceFeign.add(crmMember);
         System.out.println(responseData);
         return crmMember;
 

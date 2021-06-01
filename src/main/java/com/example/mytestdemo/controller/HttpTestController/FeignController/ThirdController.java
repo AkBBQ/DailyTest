@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.example.mytestdemo.controller.HttpTestController.FeignController.domain.CrmMember;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -56,8 +57,11 @@ public class ThirdController {
      * 返回一个JSON对象
      */
     @GetMapping("/query2/{name}")
-    public void hello2(@PathVariable("name") String name, HttpServletResponse response) throws IOException {
+    public void hello2(@PathVariable("name") String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+        // UserServiceFeignConfiguration 拦截器中新增了这2个参数
+        String authorization = request.getHeader("Authorization");
+        String trace_id = request.getHeader("trace_id");
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", name);
