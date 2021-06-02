@@ -21,18 +21,5 @@ public class demo {
         map1.put(i,"哈哈");
         map2.putAll(map1);
         }
-        System.out.println(map2);
-
-
-        String name ="   sss   ";
-
-
-        System.out.println(name.trim());
-
-
-        String s ="32092319970412481x";
-        System.out.println(s.toUpperCase());
-
-
     }
 }

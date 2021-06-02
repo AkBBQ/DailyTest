@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <guava.version>28.2-jre</guava.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
     </properties>
 
@@ -23,6 +24,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
         <dependency>
