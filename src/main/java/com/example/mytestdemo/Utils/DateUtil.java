@@ -1,9 +1,13 @@
 package com.example.mytestdemo.Utils;
 
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * 日期工具1
@@ -52,6 +56,15 @@ public class DateUtil {
         calendar.setTime(date);
         calendar.add(Calendar.MONTH, month);
         return calendar.getTime();
+    }
+
+    /**
+     * 微信东八区时间格式
+     */
+    public static String toWeiXin_TimeZone(Date date) {
+        DateTime dt1 = new DateTime(date, DateTimeZone.forTimeZone(TimeZone.getTimeZone("Asia/Shanghai")));
+        return dt1.toString();
+
     }
 
     public static Date addDay(Date date, int day) {
