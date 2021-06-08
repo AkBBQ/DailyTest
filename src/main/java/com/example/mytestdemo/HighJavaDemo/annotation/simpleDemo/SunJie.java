@@ -12,9 +12,10 @@ import java.lang.annotation.Target;
 // 保留到运行时，可通过注解获取
 @Retention(RetentionPolicy.RUNTIME)
 //注解用于字段上
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD,ElementType.TYPE})
 public @interface SunJie {
-    String name();
-    int age();
+    String name() default "";
+
+    int age() default 0;
 
 }

@@ -1,11 +1,13 @@
 package com.example.mytestdemo.HighJavaDemo.annotation.simpleDemo;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 
 /**
  * 自定义注解
  */
 
+@SunJie
 public class Test {
 
     @SunJie(name = "SUN", age = 12)
@@ -15,6 +17,7 @@ public class Test {
     public static void main(String[] args) {
         //获取类模板
         Class c = Test.class;
+        Annotation annotation1 = c.getAnnotation(SunJie.class);
 
         // 获取所有字段
         for (Field field : c.getDeclaredFields()) {
