@@ -11,5 +11,18 @@ package com.example.mytestdemo.JavaDemo.Abstract;
 
 public class TestDemo {
     public static void main(String[] args) {
+        BuySomethingService buySomethingService = new HuaWei();
+        String s = buySomethingService.buySomething("");
+        System.out.println(s);
+        System.out.println(buySomethingService.getName(""));
+
+        System.out.println(buySomethingService.getPlace(""));
+
+
+        BuyMobile buyMobile = new Iphone();
+        System.out.println(buyMobile.buySomething(""));
+        System.out.println(buyMobile.getName(""));
+        System.out.println(buyMobile.getPlace(""));
+
     }
 }

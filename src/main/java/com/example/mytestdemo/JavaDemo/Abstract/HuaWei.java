@@ -12,7 +12,17 @@ package com.example.mytestdemo.JavaDemo.Abstract;
 public class HuaWei extends BuyMobile {
 
     @Override
-    void buyWhat() {
-        System.out.println("买华为手机");
+    public String getName(String name) {
+        return "HuaWei 买手机";
+    }
+
+    @Override
+    public String getPlace(String place) {
+        return "HuaWei 买手机的地方是中国";
+    }
+
+    @Override
+    protected String buyWhat(String things) {
+        return "HuaWei手机";
     }
 }

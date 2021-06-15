@@ -12,10 +12,20 @@ package com.example.mytestdemo.JavaDemo.Abstract;
 public abstract class BuyMobile implements BuySomethingService {
 
     @Override
-    public void buySomething() {
-        buyWhat();
+    public String getName(String name) {
+        return null;
     }
 
-    abstract void buyWhat();
+    @Override
+    public String getPlace(String place) {
+        return null;
+    }
 
+    @Override
+    public String buySomething(String thing) {
+
+        return buyWhat(thing);
+    }
+
+    protected abstract String buyWhat(String things);
 }

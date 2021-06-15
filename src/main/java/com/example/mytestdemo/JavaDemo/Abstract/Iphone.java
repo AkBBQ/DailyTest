@@ -11,9 +11,18 @@ package com.example.mytestdemo.JavaDemo.Abstract;
 
 public class Iphone extends BuyMobile {
 
+    @Override
+    public String getName(String name) {
+        return "苹果 买手机";
+    }
 
     @Override
-    void buyWhat() {
-        System.out.println("买苹果手机");
+    public String getPlace(String place) {
+        return "苹果 买手机的地方是美国";
+    }
+
+    @Override
+    protected String buyWhat(String things) {
+        return "Iphone 手机";
     }
 }
