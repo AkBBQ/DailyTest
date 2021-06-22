@@ -9,6 +9,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -53,5 +55,23 @@ public class UserManagerImpl extends ServiceImpl<UserDao, UserDO> implements Use
     public Set<String> getUserRoles(Integer userId) {
 
         return userDao.queryUserRole(userId);
+    }
+
+    /** value不重要 key代表缓存的key值 condition代表条件 只有当age=1 才去走缓存 */
+    @Cacheable(value = "cashName",key = "#userName")
+    @Override
+    public UserDO queryUserByName(String userName ,int age) {
+        UserDO userDO = new UserDO();
+        userDO.setId(1);
+        userDO.setName("zhangSan");
+        userDO.setPassword("123");
+        return userDO;
+    }
+
+    /** 缓存移除 名字key就移除*/
+    @CacheEvict(value = "cashName",key = "#userName")
+    @Override
+    public void updateUser(String userName, int age) {
+        System.out.println("123");
     }
 }

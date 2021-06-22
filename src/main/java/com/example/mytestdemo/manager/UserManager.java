@@ -2,6 +2,7 @@ package com.example.mytestdemo.manager;
 
 import com.example.mytestdemo.domain.UserDO;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.Set;
 
@@ -31,5 +32,16 @@ public interface UserManager extends IService<UserDO> {
     UserDO getCurrentUser();
 
     Set<String> getUserRoles(Integer userId);
+
+
+    /**
+     * 走缓存查询用户
+     */
+    UserDO queryUserByName(String userName , int age);
+
+    /**
+     * 走缓存查询用户
+     */
+    void updateUser(String userName , int age);
 
 }
