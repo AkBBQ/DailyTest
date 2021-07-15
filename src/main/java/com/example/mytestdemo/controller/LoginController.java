@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * 登录
@@ -67,4 +69,17 @@ public class LoginController {
         currentUser.logout();
         return ApiResult.ok();
     }
+
+    /**
+     * 后端返回一个html文件示例
+     *
+     * @param response
+     * @throws IOException
+     */
+    @GetMapping(value = "/loginErr.json")
+    public void loginErr(HttpServletResponse response) throws IOException {
+        response.getWriter().println("<font color=red>YYYYYYYY</font>");
+        response.getWriter().println("<BUTTON> click me </BUTTON>");
+    }
+
 }
