@@ -1,5 +1,7 @@
 package com.example.mytestdemo.JavaDemo.Abstract;
 
+import org.springframework.stereotype.Service;
+
 /**
  * All rights Reserved, Designed By www.maihaoche.com
  *
@@ -9,6 +11,7 @@ package com.example.mytestdemo.JavaDemo.Abstract;
  * @Copyright: 2017-2020 www.maihaoche.com Inc. All rights reserved.
  */
 
+@Service
 public class HuaWei extends BuyMobile {
 
     @Override

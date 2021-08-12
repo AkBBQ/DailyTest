@@ -29,6 +29,7 @@ public class HttpClientController {
     public void ss() throws IOException {
 
 
+
         CrmMember crmMember = new CrmMember();
         crmMember.setName("23");
         crmMember.setAge(23);
@@ -38,7 +39,7 @@ public class HttpClientController {
         String response = StringUtils.EMPTY;
         try {
             client = HttpClients.createDefault();
-            HttpPost httpPost = new HttpPost("http://localhost:8080/third/server/add/member");
+            HttpPost httpPost = new HttpPost("http://localhost:9090/test");
             StringEntity strEntity = new StringEntity(request);
             httpPost.setEntity(strEntity);
             RequestConfig requestConfig = RequestConfig.custom()
@@ -72,5 +73,50 @@ public class HttpClientController {
             }
         }
 
+    }
+
+    public static void main(String[] args) {
+        CrmMember crmMember = new CrmMember();
+        crmMember.setName("23");
+        crmMember.setAge(23);
+
+        String request = JSON.toJSONString(crmMember);
+        CloseableHttpClient client = null;
+        String response = StringUtils.EMPTY;
+        try {
+            client = HttpClients.createDefault();
+            HttpPost httpPost = new HttpPost("http://localhost:9090/test");
+            StringEntity strEntity = new StringEntity(request);
+            httpPost.setEntity(strEntity);
+            RequestConfig requestConfig = RequestConfig.custom()
+                    .setSocketTimeout(20000)
+                    .setConnectTimeout(20000).build();
+            httpPost.setConfig(requestConfig);
+
+            httpPost.setHeader("accept", "*/*");
+            httpPost.setHeader("connection", "Keep-Alive");
+            httpPost.setHeader("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
+            httpPost.setHeader("Content-Type", "application/json;charset=utf-8");
+
+            CloseableHttpResponse httpResponse = client.execute(httpPost);
+
+            int statusCode = httpResponse.getStatusLine().getStatusCode();
+            if (statusCode < 200 || statusCode > 300) {
+                throw new RuntimeException();
+            }
+            HttpEntity entity = httpResponse.getEntity();
+            if (entity != null) {
+                response = EntityUtils.toString(entity, "utf-8");
+                System.out.println(response);
+            }
+        } catch (Exception e) {
+        } finally {
+            if (client != null) {
+                try {
+                    client.close();
+                } catch (IOException e) {
+                }
+            }
+        }
     }
 }

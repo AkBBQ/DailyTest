@@ -2,6 +2,7 @@ package com.example.mytestdemo;
 
 import com.example.mytestdemo.Bean.AppConfig;
 import com.example.mytestdemo.Config.Interceptor.LoginVerifyInterceptor;
+import com.example.mytestdemo.JavaDemo.Abstract.BuySomethingService;
 import com.example.mytestdemo.JavaDemo.demo.HeelloRunnable;
 import com.example.mytestdemo.JavaDemo.demo.HelloThread;
 import org.junit.Test;
@@ -16,10 +17,14 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class MytestdemoApplicationTests {
+public class MytestdemoApplicationTests extends  BaseTest {
+
+    @Autowired
+    Map<String, BuySomethingService> map = new ConcurrentHashMap<>();
 
     @Resource
     DataSource dataSource;
@@ -27,6 +32,10 @@ public class MytestdemoApplicationTests {
     @Autowired
     private AppConfig appConfig;
 
+@Test
+public void test2(){
+    System.out.println(map);
+}
 
     @Test
     public void contextLoads() {
