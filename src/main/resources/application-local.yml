@@ -64,3 +64,6 @@ mybatis-plus:
 #自定义配置
 info:
   name: sunjie
+
+logging:
+  config: classpath:logback-spring.xml
