@@ -3,9 +3,9 @@ spring:
     name: TestDemo
 
   datasource:
-    username: sunjie
+    username: root
     password: 970306
-    url: jdbc:mysql://47.106.8.7:3306/db_test?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/student?useUnicode=true&characterEncoding=utf-8&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     #druid 数据源专有配置
