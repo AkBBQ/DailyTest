@@ -140,6 +140,110 @@ public class HttpClientUtil {
         return result;
     }
 
+    public static void main(String[] args) {
+        List<String> urls = Arrays.asList("https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=035fbe324d53459e88448b76723206fe",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=0728a984b04d4790ab04812151bcbe56",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=0cd6be3d49d94277b5b732dd1a4c18c6",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=10396be20c024ca485b16a86f0b092f6",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=1323395a8f4b4d1aa07105b0fbdc91b3",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=157fc3724a4740839db7800f955cdb1c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=17a3ec5ca4b045c387a548a8ac4ad2f9",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=192a3c1fd5dd4b9b9b4178454eec52f6",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=1b722e59a50447f8a7a4333697e2da4e",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=1d63852ced1d47f3ab6c77678686975c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=1de2e5f675fb4beda46b15311a542fe7",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=1df59fd3b38048f0a66be9cb50c249c4",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=21c30c2b365e448faf3e71b34465bfbb",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=24ceae90234143a9bef34124ee6e63e2",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=25f96a7822c641aa9c7c23b1afea2cf1",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=280de15f92874852a2230722427fd034",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=2ca2164da91e4541b9ccc62b3c77d797",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=2cb7d467fd744a4eb4fd60a9f8dbd121",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=2cd910f1c4804a288e12e8585d9c184b",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=31477c97859643e195a6f256f1fb61d1",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=3165b6fce42d4b6db8f8d5aa2aab5129",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=3312c33a8e014ff08e2345675f816222",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=3825adc9b9f74febbaff068f817dc491",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=394c8f8af43b4cdf85dce7505a976f7c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=4257cf1e07b64df992f30372730d5cc1",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=45479b54f78a49af875d3f4eff67fcd5",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=46aea8a094404a9391cb318f6dfed895",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=49ff7f5cabc24129b896d16bda225f4c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=4d17e30aa38942f3bfd5547360a67b74",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=4f264c570b0c40eb89eff78cbb7831c7",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=4fea1a5418084fa1a50a25cb1f4fb3be",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=515a2263a39e44c1bdbc734769fcf95c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=5204e97b16a94811b441ecb1f15b6914",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=54a5c179cf954c8d986e0c894c19617e",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=559b2515b0ab45b3912c0aa913232565",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=5b8c34d07a1549fd8ffc19123f70198f",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=5d8331f05e7a49baa750fc2480a1718e",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=5dad23ee2f664d24b5d6be532a0f938d",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=61cad7d905e44efba411f2eb681c45f4",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=67bb72a46a3b476989da633fd3344278",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=6c2b00797cae46cdba3e941fc475ee3b",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=6db5f2d3cacb4f7fad471a36e26b593c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=6f65f7e674e54d228c0566f34ba98a43",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=7059a130cd7a4cee92c73a1769d6568b",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=73fd310fc34b434abcaba6a663b43923",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=79cb59a29fd64bb09bfb6bc38a40954f",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=7b976c6177db4e36a005e6c465e5205b",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=7d9dbf32c1b14673a2a568b24909a5c9",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=8258c71e5e684c7a8288428fcfd7550e",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=8282bc41ba5947e2abdf7351cbf3fc20",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=881e38abe9c449e9b8085e55931753f5",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=88c4b4eee31d4684bd93d3bf8cd63179",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=8a734ed80bc540bc9774c0dd6aadb1f3",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=8e776e351914426780a1d1e1c523181a",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=8f3d540975eb4b7daccfd16d98b77ddb",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=9041965bc040401c9d32dd3460e8dd22",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=919fdc096f674cdeb25b6f0827d5b890",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=91c8d04608ab468199b002b1aac34531",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=9772991a67774a8baddbcc7482f24bf8",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=9ab6f675e5054deb84291fcc868517a9",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=9b8c0af9ad7947d4a0e772446b0853a4",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=9c2d8461b749485cbcc6dbda7d2bc7ff",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=9d9273e50ff645cabcee1c44763a9124",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=a44e75559da8463a9e0f36369d2a4bab",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=a62b16f589214b0dad86e5cf21bc22cc",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=adbca9cb155c4195bd3a49c1afd7d86c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=b8fbfa96e55f4a4e87eb81a974a8f0a6",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=c450fd085585496dafa1d062b4950b54",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=c4f0dcf36ae64702ba11632344584a5c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=cc1ce427a72e48e284faf24938cfc4dc",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=cf9456ac96304a6195d07a24f3dac67e",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=d0c263785de742a68028ceffca21bedf",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=d82785cfa8ae4937a7c95a05ae540ff5",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=db2f7476f65742e69c258d12b728f7e1",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=dd5612861a6649e99e8aa3d099f238a7",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=e26581f47ad84045a539d1cecd683ced",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=eb3998540f064314985879a735f6af3c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=ecea1e97945144e9b8009a3ed195021c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=f2db369d9e544f3280751828f6ccbe3c",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=f4b953ce39b14ad99d94e8ab1c61019f",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=f55556c3cc54403a96de924ef0800c25",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=f6ef12b2d76548a6b539b6b231991798",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=fab284889c9b4ca09b446d1908b9fba1",
+                "https://cloudfund-api.hd123.com/pay-cloudfund-server/dev/retry/commision?merchantUuid=202204290001&settleOrderUuid=ff198cc9fa5e49d392a07a744415a50b"
+
+        );
+
+        int size = 0;
+        for (String url : urls){
+//            try {
+//                Thread.sleep(1000L);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+            String result = get(url);
+            System.out.println(result);
+            size++;
+            System.out.println("处理好第:"+size);
+        }
+
+
+    }
+
 
     /**
      * post请求(1.处理http请求;2.处理https请求,信任所有证书)[默认编码:UTF-8]
