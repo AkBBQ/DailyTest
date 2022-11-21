@@ -394,6 +394,9 @@ public class HttpClientUtil {
 
     /**
      * 处理响应，获取响应报文
+     * sun
+     * jie
+     * 哈哈哈
      *
      * @param url
      * @param encoding
