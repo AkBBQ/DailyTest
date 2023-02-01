@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -20,6 +21,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeUnit;
 
 public class MytestdemoApplicationTests extends  BaseTest {
 
@@ -31,6 +33,25 @@ public class MytestdemoApplicationTests extends  BaseTest {
 
     @Autowired
     private AppConfig appConfig;
+
+    @Resource
+    private RedisTemplate redisTemplate;
+
+
+    @Test
+    public void redisTest(){
+        System.out.println(redisTemplate);
+
+        redisTemplate.opsForValue().set("test","helloworld");
+        System.out.println(redisTemplate.opsForValue().get("test"));
+
+        //原先的KEY的value拼接新的内容
+        redisTemplate.opsForValue().append("test","123");
+
+        redisTemplate.opsForValue().set("test001","123",10, TimeUnit.MINUTES);
+
+    }
+
 
 @Test
 public void test2(){
