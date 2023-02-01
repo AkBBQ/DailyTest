@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <guava.version>28.2-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <elasticsearch.version>7.7.0</elasticsearch.version>
     </properties>
