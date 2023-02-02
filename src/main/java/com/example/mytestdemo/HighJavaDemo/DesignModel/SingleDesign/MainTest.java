@@ -69,18 +69,23 @@ public class MainTest {
 
 
     /**
-     * 懒汉式 是 线程不安全的
+     * 懒汉式 双重锁检查
      */
-    public static class SingleTwo  extends Thread {
+    public static class SingleTwo extends Thread {
 
-        private static SingleTwo singleTwo;
+        //volatile 防止new对象发生重排序
+        private static volatile SingleTwo singleTwo;
 
         private SingleTwo() {
         }
 
-        public static synchronized SingleTwo getSingleDemo2() {
+        public static SingleTwo getSingleDemo2() {
             if (null == singleTwo) {
-                return new SingleTwo();
+                synchronized (SingleTwo.class) {
+                    if (null == singleTwo) {
+                        singleTwo = new SingleTwo();
+                    }
+                }
             }
             return singleTwo;
         }
