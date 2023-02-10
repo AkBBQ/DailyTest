@@ -2,6 +2,7 @@ package com.example.mytestdemo.controller;
 
 import com.example.mytestdemo.Command.QueryCommand;
 import com.example.mytestdemo.Config.MyException;
+import com.example.mytestdemo.HighJavaDemo.annotation.DefineDemo.NoLogin;
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.hibernate.validator.constraints.Range;
@@ -31,6 +32,47 @@ import java.util.List;
 @Validated
 @RestController
 public class HelloController {
+
+    private static Object a = new Object();
+    private static  Object b = new Object();
+
+    @RequestMapping("/test/deadLock")
+    @NoLogin
+    public void deadLock() {
+        System.out.println("主线程开始:"+Thread.currentThread().getName());
+
+        new Thread(()->{
+            synchronized (a){
+                System.out.println("线程1执行");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                synchronized (b){
+                    System.out.println("线程1执行结束");
+                }
+            }
+        }).start();
+
+
+        new Thread(()->{
+            synchronized (b){
+                System.out.println("线程2执行");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                synchronized (a){
+                    System.out.println("线程2执行结束");
+                }
+            }
+        }).start();
+
+        System.out.println("主线程结束");
+    }
+
 
     @RequestMapping("/hello")
     public Object hello(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException {
