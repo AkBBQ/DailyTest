@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.retry.annotation.EnableRetry;
 
 @Slf4j
 @SpringBootApplication
 @EnableFeignClients
 @ComponentScan(basePackages = {"com.example.mytestdemo.*"})
+@EnableRetry
 public class MytestdemoApplication {
 
     public static void main(String[] args) {
