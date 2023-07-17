@@ -66,3 +66,11 @@ info:
 
 logging:
   config: classpath:logback-spring.xml
+
+
+#pagehelper分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
